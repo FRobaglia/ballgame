@@ -18,7 +18,6 @@ class Player extends Sphere {
 
   jump() {
     if (this.canJump) {
-      console.log(`${this.constructor.name} vient de sauter`)
       this.vy -= config.player.jumpSpeed;
       if (this.vy < -config.player.jumpHeight) {
         this.canJump = false;

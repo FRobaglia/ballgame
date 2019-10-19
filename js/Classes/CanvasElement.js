@@ -11,10 +11,15 @@ class CanvasElement {
     this.vy = 0; // la vélocité de l'élément
     this.vx = 0;
     this.canJump = false;
+
     console.log(`L'élément ${this.constructor.name} vient d'être instancié`)
   }
 
   draw() {
+    console.log(`x: ${this.vx}, y: ${this.vy}`)
+    if (this.wallCollide()) {
+      this.vx = -this.vx;
+    }
     this.applyGravity();
     config.ctx.save();
     config.ctx.translate(this.xPos + this.width / 2, this.yPos + this.width / 2)  
@@ -29,8 +34,15 @@ class CanvasElement {
     this.yPos += this.vy; // la position Y de l'élément est directement impactée par sa vélocité
     this.xPos += this.vx; // la position X de l'élément est directement impactée par sa vélocité
     this.angle += this.vx
-  
+    
     this.checkCollisions();
+  }
+
+  wallCollide() {
+    if (this.xPos + this.width > config.canvas.width || this.xPos < 0) {
+      return true;
+    }
+    return false;
   }
 
   checkCollisions() {
@@ -42,7 +54,6 @@ class CanvasElement {
       this.canJump = true;
     }
   }
-
 }
 
 

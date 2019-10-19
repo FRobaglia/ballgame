@@ -9,12 +9,13 @@ const config = {
   bounceFactor: -0.65,
 
   player: {
-    initialSpeed: 3.2, // Quand une touche est appuyée, la vitesse du joueur s'initilaise à initialSpeed
+    initialSpeed: 3.2, // Quand une touche est appuyée, la vitesse du joueur s'initialise à initialSpeed
     acceleration: 0.2, // puis sa vitesse monte de acceleration toutes les frames, jusqu'à atteindre playerMaxSpeed
     maxSpeed: 9, // Vitesse maximum du joueur
     deceleration: 0.06, // Vitesse à laquelle le joueur ralentit une fois les touches droite ou gauche lâchées
     jumpSpeed: 1.5, // Vitesse de saut
-    jumpHeight: 11 // Hauteur des sauts, plus la hauteur est élevé plus le joueur peut sauter haut
+    jumpHeight: 11, // Hauteur des sauts, plus la hauteur est élevé plus le joueur peut sauter haut
+    strafeDuration: 5 // Le temps avant de pouvoir faire un autre mouvement 
   }
 }
 

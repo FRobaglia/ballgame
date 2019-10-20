@@ -1,7 +1,7 @@
-import CanvasElement from './CanvasElement.js';
+import GenericCanvasElement from './GenericCanvasElement.js';
 import config from '../config.js'
 
-class Sphere extends CanvasElement {
+class Sphere extends GenericCanvasElement {
   drawShape() {
     config.ctx.save();
     config.ctx.fillStyle = "#0095DD";

@@ -20,6 +20,7 @@ class Player extends Sphere {
 
   jump() {
     if (player.isOnGround()) {
+      config.sounds.jump.play();
       this.vy = 0;
       this.vy -= config.player.jumpHeight;
     }

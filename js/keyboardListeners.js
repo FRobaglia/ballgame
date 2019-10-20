@@ -19,7 +19,7 @@ window.addEventListener(
 );
 
 function watchPressedKeys() {
-  if (pressedKeys[38]) {
+  if (pressedKeys[38] || pressedKeys[32]) {
     player.jump();
   }
   if (pressedKeys[39]) {
@@ -33,9 +33,12 @@ function watchPressedKeys() {
   }
 }
 
-document.addEventListener('keyup', function(e) {
-  if (e.keyCode === 38) {
-  }
-})
+/* jouer le thème principale une fois que l'utilisateur a interagi */
+
+document.addEventListener('keydown', function() {
+  config.sounds.mainTheme.loop = true;
+  config.sounds.mainTheme.play();
+}, {once: true})
+
 
 export default watchPressedKeys;

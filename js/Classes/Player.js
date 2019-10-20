@@ -1,5 +1,7 @@
 import Sphere from "./Sphere.js";
 import config from '../config.js';
+import player from "../game.js";
+import Rectangle from "./Rectangle.js";
 
 
 
@@ -17,11 +19,9 @@ class Player extends Sphere {
   }
 
   jump() {
-    if (this.canJump) {
-      this.vy -= config.player.jumpSpeed;
-      if (this.vy < -config.player.jumpHeight) {
-        this.canJump = false;
-      }
+    if (player.isOnGround()) {
+      this.vy = 0;
+      this.vy -= config.player.jumpHeight;
     }
   }
 

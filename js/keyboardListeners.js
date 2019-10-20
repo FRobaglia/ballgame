@@ -33,4 +33,9 @@ function watchPressedKeys() {
   }
 }
 
+document.addEventListener('keyup', function(e) {
+  if (e.keyCode === 38) {
+  }
+})
+
 export default watchPressedKeys;

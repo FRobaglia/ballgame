@@ -12,6 +12,7 @@ image.onload = drawCanvas;
 image.src="../assets/images/ball.jpg";
 
 let player = new Player(175, 175, 100, 100, image);
+let obstacle = new Rectangle(100, 100, 100, 100)
 export default player;
 
 function drawCanvas() {

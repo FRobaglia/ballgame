@@ -10,16 +10,11 @@ class CanvasElement {
     this.angle = 0; // angle de rotation de l'élément
     this.vy = 0; // la vélocité de l'élément
     this.vx = 0;
-    this.canJump = false;
 
     console.log(`L'élément ${this.constructor.name} vient d'être instancié`)
   }
 
   draw() {
-    console.log(`x: ${this.vx}, y: ${this.vy}`)
-    if (this.wallCollide()) {
-      this.vx = -this.vx;
-    }
     this.applyGravity();
     config.ctx.save();
     config.ctx.translate(this.xPos + this.width / 2, this.yPos + this.width / 2)  
@@ -45,13 +40,29 @@ class CanvasElement {
     return false;
   }
 
+  isOnGround() {
+    if (this.yPos + this.height >= config.canvas.height) {
+      return true;
+    }
+    return false;
+  }
+
   checkCollisions() {
-    if (this.yPos + this.height > config.canvas.height) {
+    
+    if (this.wallCollide()) {
+      this.vx = -this.vx;
+      if (this.xPos < 0) { 
+        this.xPos = 0;
+      } else if (this.xPos + this.width > config.canvas.width) {
+        this.xPos = config.canvas.width - this.width
+      }
+    }
+
+    if (this.isOnGround()) {
       // si l'objet rentre en collision avec le sol
-      
+
       this.yPos = config.canvas.height - this.height;
       this.vy *= config.bounceFactor;
-      this.canJump = true;
     }
   }
 }

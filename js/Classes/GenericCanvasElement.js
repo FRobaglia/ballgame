@@ -88,7 +88,6 @@ class GenericCanvasElement {
       element.yPos < this.yPos + this.height &&
       element.height + element.yPos > this.yPos
     ) {
-      console.log('Collision')
       return true;
     }
 

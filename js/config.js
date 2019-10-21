@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas')
 
+
 const config = {
   canvas: canvas,
   ctx: canvas.getContext('2d'),
@@ -29,5 +30,8 @@ const config = {
     speedLossOnCollision: 1.3 // valeur par laquelle la vitesse du joueur est divisée lorsqu'il heurte un obstacle. si inférieur à 1, la vitesse du joueur augmentera au contact d'un mur
   }
 }
+
+config.sounds.collideX.volume = 0.4;
+config.sounds.bounce.volume = 0.6;
 
 export default config

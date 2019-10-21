@@ -11,10 +11,10 @@ let image = new Image();
 image.onload = drawCanvas;
 image.src="../assets/images/ball.jpg";
 
-let player = new Player(65, 65, 75, 75, image);
-let rectangle = new Rectangle(0, 0, 50, 50);
-let rectangle2 = new Rectangle(150, 0, 150, 150);
-let rectangle3 = new Rectangle(350, 0, 150, 150);
+let player = new Player(65, -150, 100, 100, image);
+let rectangle = new Rectangle(0, 0, 100, 100);
+let rectangle2 = new Rectangle(150, 0, 270, 270);
+let rectangle3 = new Rectangle(530, 0, 400, 400);
 config.obstacles.rectangles.push(rectangle, rectangle2, rectangle3)
 
 

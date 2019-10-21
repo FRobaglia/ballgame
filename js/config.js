@@ -7,12 +7,13 @@ const config = {
   
   gravity: 1, // force de gravité, plus elle est élevée plus les objets sont attirés vers le sol
   bounceFactor: -0.7, // un élément rebondira à 70% de sa vitesse initiale (1 -> 0.70, 0.70 -> 0.49, jusqu'à 0..)
-  minimumBounce: -5, // on arrête de faire rebondir un élément si son rebond sera inférieur à minimumBounce
+  minimumBounce: -2, // on arrête de faire rebondir un élément si son rebond sera inférieur à minimumBounce
 
   sounds: {
     mainTheme: new Audio('../assets/sounds/maintheme.wav'),
-    bounce: new Audio('../assets/sounds/bounce.wav'),
+    collideX: new Audio('../assets/sounds/collideX.wav'),
     jump: new Audio('../assets/sounds/jump.wav'),
+    bounce: new Audio('../assets/sounds/bounce.wav'),
   },
 
   obstacles: {

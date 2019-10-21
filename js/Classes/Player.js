@@ -19,8 +19,8 @@ class Player extends Sphere {
   }
 
   jump() {
-    if (player.isOnGround()) {
-      config.sounds.jump.play();
+    if (player.isOnGround) {
+      config.sounds.jump.cloneNode(true).play();
       this.vy = 0;
       this.vy -= config.player.jumpHeight;
     }

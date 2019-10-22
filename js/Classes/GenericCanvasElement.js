@@ -100,7 +100,8 @@ class GenericCanvasElement {
       if (this.vy > 0) {
         this.bounce(element.yPos)
       } else if (this.vy < 0) {
-        this.yPos = element.yPos - element.height
+        this.yPos = element.yPos + element.height
+        this.vy *= config.bounceFactor;
       }
     } 
     else {
@@ -122,7 +123,7 @@ class GenericCanvasElement {
   }
 
   wasUnder(element) {
-    if (this.oldState.yPos >= element.yPos + element.height + this.height) {
+    if (this.oldState.yPos >= element.yPos + element.height) {
       return true; // this était en dessous de l'élément en argument à la frame d'avant
     }
     return false;
